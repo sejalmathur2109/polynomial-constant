@@ -13,7 +13,6 @@ double findConstant(double x[], double y[], int n, int k) {
             }
         }
 
-        // Add the contribution of the current term to the constant
         constant += y[i] * basis;
     }
 
@@ -22,8 +21,6 @@ double findConstant(double x[], double y[], int n, int k) {
 
 int main() {
     int n, k;
-
-    // Input number of points and minimum points required
     printf("Enter the number of points (n): ");
     scanf("%d", &n);
 
@@ -36,15 +33,12 @@ int main() {
     }
 
     double x[n], y[n];
-
-    // Input x and y values
     printf("Enter the x and y values:\n");
     for (int i = 0; i < n; i++) {
         printf("Point %d (x, y): ", i + 1);
         scanf("%lf %lf", &x[i], &y[i]);
     }
 
-    // Compute the constant term using Lagrange interpolation
     double constant = findConstant(x, y, n, k);
     printf("The constant term (secret) c is: %.6lf\n", constant);
 
